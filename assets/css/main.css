@@ -5,7 +5,7 @@ body {
     font-family: Lato;
     font-weight: 300;
     font-size: 16px;
-    color: #555;
+    color: #7A7C79;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(black), to(#4E4D4E));
@@ -31,6 +31,7 @@ p {
     line-height: 28px;
     margin-bottom: 25px;
     font-size: 18px;
+    color: #7A7C79;
 }
 .centered {
     text-align: center;
@@ -41,7 +42,7 @@ p {
 .mt {
     padding-top: 25px;
 }
-a {
+/*a {
     color: #16a085;
     word-wrap: break-word;
     -webkit-transition: color .1s ease-in, background .1s ease-in;
@@ -49,7 +50,7 @@ a {
     -ms-transition: color .1s ease-in, background .1s ease-in;
     -o-transition: color .1s ease-in, background .1s ease-in;
     transition: color .1s ease-in, background .1s ease-in;
-}
+}*/
 a:hover, a:focus {
     color: #7b7b7b;
     text-decoration: none;
@@ -368,9 +369,10 @@ hr {
     background-size: cover;
 }
 #portfolio {
-    width: 100%}
+    width: 100%
+  }
 #services {
-    background: #1abc9c;
+    background: #4A6DE1;
     margin-top: 25px;
     padding-top: 35px;
     padding-bottom: 35px;
@@ -379,7 +381,7 @@ hr {
     color: #fff;
 }
 #services p {
-    color: #fff;
+    color: #E1E7EE;
 }
 #services i {
     color: #fff;
@@ -572,7 +574,7 @@ hr {
     opacity: 1;
 }
 }
-
+/*needs to be organized*/
 .contruction{
   position: absolute;
   margin: 0px;
@@ -593,3 +595,29 @@ hr {
   position: absolute;
   margin-top: -55px;
 }
+
+.changeBackground{
+  background-image: url('../img/giphy.gif') !important;
+  background-size: 100% 100% !important;
+}
+
+div.a {
+  width: 80px;
+  height: 50px;
+  background-image: url('../img/0059.gif');
+  background-size: cover;
+  position:fixed;
+
+}
+div.a:hover{
+  cursor: crosshair;
+}
+
+.img-responsive{
+  height: 250px !important;
+}
+
+/*.html4{
+  height: 170px;
+  width: 200px;
+}*/

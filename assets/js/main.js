@@ -9,8 +9,14 @@
 
 	$(document).ready(function(){
   	animateDiv();
-
+		$('.a').click(function(){
+      var explotion = $(".a").addClass("changeBackground");
+      explotion.fadeOut( 200, function() {
+    		// Animation complete.
+  		});
+   	});
 	});
+
 
 function makeNewPosition(){
 
