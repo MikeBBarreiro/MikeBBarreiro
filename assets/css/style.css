@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+
+ .sideNavP{
+   padding:10px !important;
+   font-size: 15px !important;
+   color: white !important;
+   font-family: "Lato" sans-serif !important;
+ }
+
+div.a {
+  width: 80px;
+  height: 50px;
+  background-image: url('../img/0059.gif');
+  background-size: cover;
+  position:fixed;
+
+}
+
+/* ==========================================================================
+   Wrap Sections
+   ========================================================================== */
+
+#headerwrap {
+	/*background: url(../img/neb.jpg) no-repeat center top;*/
+	/*margin-top: 0px;
+	padding-top:120px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 700px;
+	width: 100%;*/
+
+    /*-webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+}
+
+
+/*--------SHOOTING----STAR---------*/
+.a{
+  /*margin-bottom: -100%;*/
+  margin-top: -16%;
+  margin-left: 5%;
+  height:200px;
+  width:250px;
+  position:absolute;
+  /*-webkit-animation-delay: 300.5s;*/
+}
