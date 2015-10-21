@@ -59,4 +59,6 @@ function calcSpeed(prev, next) {
 
 
 
+
+
 })(jQuery)

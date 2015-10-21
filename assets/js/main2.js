@@ -1,55 +1,140 @@
-;(function(){
+/* global google:true */
+/* jshint camelcase:false */
+(function(){
+  'use strict';
 
-			// Menu settings
-			$('#menuToggle, .menu-close').on('click', function(){
-				$('#menuToggle').toggleClass('active');
-				$('body').toggleClass('body-push-toleft');
-				$('#theMenu').toggleClass('menu-open');
-			});
 
-			$(document).ready(function(){
-    animateDiv();
+  $(document).ready(function(){
+    $('#toggle_showshooshi').click(geocode);
+    $('#toggle_showshooshi').click(function(){
+      $(".Sushi").attr('src',"assets/img/ww1.png");
+    });
+  });
+	
+$('#vid').on('ended', function(){this.playedThrough = true;});
 
-});
+$(window).scroll(function(){
+    var myVideo = document.getElementById("vid");
 
-function makeNewPosition(){
+    if($(window).scrollTop() > 300 && $(window).scrollTop() < 975){
+       // only if we didn't reached the end yet
+       if(!myVideo.playedThrough)
+          myVideo.play();
+    }else{
+       myVideo.pause();
+    }
+ })
 
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 30;
-    var w = $(window).width() - 30;
+  var map,
+      infowindow = new google.maps.InfoWindow(),
+      mapCity,
+      //cityName,
+      lat,
+      lng;
+  console.log('LAT & LNG HERE---->', lat, lng);
 
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
 
-    return [nh,nw];
+  function initialize(lat, lng){
+		var Mapstyles = [{'stylers':[{'hue':'#ff1a00'},{'invert_lightness':true},{'saturation':-100},{'lightness':33},{'gamma':0.5}]},{'featureType':'water','elementType':'geometry','stylers':[{'color':'#2D333C'}]}];
+    if(lat && lng){
+      mapCity = new google.maps.LatLng(lat, lng);
+    }else{
+      mapCity = new google.maps.LatLng(36.1386389, -86.7498236);
+    }
 
-}
-
-function animateDiv(){
-    var newq = makeNewPosition();
-    var oldq = $('.a').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-
-    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv();
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: mapCity,
+      zoom: 10,
+			styles: Mapstyles
     });
 
-};
-
-function calcSpeed(prev, next) {
-
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
-
-    var greatest = x > y ? x : y;
-
-    var speedModifier = 0.1;
-
-    var speed = Math.ceil(greatest/speedModifier);
-
-    return speed;
-
-}
+    var request = {
+      location: mapCity,
+      radius: 50000,
+      query: 'sushi restaurant'
+    };
+    infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+    service.textSearch(request, callback);
+  }
+//-------------initialize--end--------------\\
 
 
-})(jQuery)
+  function callback(results, status){
+    if (status === google.maps.places.PlacesServiceStatus.OK){
+      for (var i = 0; i < results.length; i++){
+        createMarker(results[i]);
+      }
+    }
+  }
+
+  function createMarker(place){
+    var placeLoc = place.geometry.location,
+      marker = new google.maps.Marker({
+        icon: 'assets/img/SSmapMarker.png',
+        map: map,
+        animation: google.maps.Animation.DROP,
+        position: placeLoc
+      });
+
+    google.maps.event.addListener(marker, 'click', function(){
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
+    });
+  }
+  //--------------traffic_toggle-----------------\\
+  var trafficLayer = new google.maps.TrafficLayer();
+  $('#toggle_traffic').click(function(){
+    if(trafficLayer.getMap()){
+      trafficLayer.setMap(null);
+    }else{
+      trafficLayer.setMap(map);
+    }
+  });
+//---------------traffic_toggle_end----------------\\
+
+//-----------------weather_toggle----------------------------\\
+  var weatherLayer =new google.maps.weather.WeatherLayer({
+    temperatureUnits: google.maps.weather.TemperatureUnit.FAHRENHEIT
+  }),
+  cloudLayer = new google.maps.weather.CloudLayer();
+
+  $('#toggle_weather').click(function(){
+    if(weatherLayer.getMap() || cloudLayer.getMap()){
+      weatherLayer.setMap(null);
+      cloudLayer.setMap(null);
+    }else{
+      weatherLayer.setMap(map);
+      cloudLayer.setMap(map);
+    }
+  });
+//--------------weather_toggle_end-----------------------------\\
+
+  function geocode(event){
+    var geocoder = new google.maps.Geocoder(),
+        name = $('#name').val();
+
+    geocoder.geocode({address:name}, function(results, status){
+      console.log('---------->-------->--->', results);
+      var cityName = results[0].formatted_address,
+        lat  = results[0].geometry.location.lat(),
+        lng  = results[0].geometry.location.lng();
+
+      $('#name').val(cityName);
+      $('#lat').val(lat);
+      $('#lng').val(lng);
+
+      centerCity(lat, lng);
+      initialize(lat, lng);
+    });
+
+    event.preventDefault();
+  }
+
+  function centerCity(lat, lng){
+    map.setCenter({lat:lat, lng:lng});
+  }
+
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+})();
