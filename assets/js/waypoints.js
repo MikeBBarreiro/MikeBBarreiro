@@ -23,11 +23,11 @@
     offset: '100%'
   });
 
-  // $('.wp3').waypoint(function(){
-  //   $('.wp3').addClass('animated flipInY');
-  // }, {
-  //   offset: '100%'
-  // });
+  $('.wp3').waypoint(function(){
+    $('.wp3').addClass('animated fadeInUp');
+  }, {
+    offset: '100%'
+  });
 
 ///////////// My Latest Works ////////////
 //   $('.wp4').waypoint(function(){

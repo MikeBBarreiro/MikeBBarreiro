@@ -10,7 +10,7 @@
       $(".Sushi").attr('src',"assets/img/ww1.png");
     });
   });
-	
+
 $('#vid').on('ended', function(){this.playedThrough = true;});
 
 $(window).scroll(function(){
@@ -51,7 +51,7 @@ $(window).scroll(function(){
     var request = {
       location: mapCity,
       radius: 50000,
-      query: 'sushi restaurant'
+      query: 'Nashville, tn'
     };
     infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
@@ -71,7 +71,7 @@ $(window).scroll(function(){
   function createMarker(place){
     var placeLoc = place.geometry.location,
       marker = new google.maps.Marker({
-        icon: 'assets/img/SSmapMarker.png',
+        icon: 'assets/img/MichaelsLeoMark.png',
         map: map,
         animation: google.maps.Animation.DROP,
         position: placeLoc

@@ -34,6 +34,10 @@ p {
     color: #7A7C79;
 }
 
+h4{
+  font-family: 'Lato', sans-serif;
+}
+
 #map {
   height: 350px;
   width: 100%;
@@ -97,6 +101,14 @@ hr {
     font-size: 14px;
     line-height: 20px;
 }
+
+.Leo-Menu{
+  background-image: url('../img/Leo-white.png');
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+
 .menu {
     position: fixed;
     right: -200px;
@@ -205,14 +217,16 @@ hr {
 #menuToggle {
     position: absolute;
     top: 20px;
-    left: 0;
+    left: -15px;
     z-index: 11;
     display: block;
     text-align: center;
     font-size: 14px;
     color: #fff;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    padding: 13px;
     line-height: 40px;
     cursor: pointer;
     background: rgba(0, 0, 0, .25);
@@ -234,7 +248,7 @@ hr {
 #headerwrap {
     /*background: url(../img/bvs-2.jpg) no-repeat center top;*/
     background: url(../img/neb.jpg) no-repeat center top;
-     background-attachment: fixed;
+    background-attachment: fixed;
     margin-top: -10px;
     padding-top: 20px;
     text-align: center;
@@ -377,11 +391,20 @@ hr {
     background-size: cover;
 }
 #portfolio {
-    width: 100%
+  width: 100%;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(black), to(#343334));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #4E4D4E, black);
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top,#343334, black);
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #4E4D4E, black);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #4E4D4E, black);
   }
 #services {
     background: #4A6DE1;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
     padding-top: 35px;
     padding-bottom: 35px;
 }
@@ -397,7 +420,7 @@ hr {
     margin-top: 22px;
 }
 #lg {
-    background: #ebebeb;
+    /*background: #ebebeb;*/
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
@@ -675,6 +698,9 @@ div.a {
   /*background: -ms-radial-gradient(circle, white, #BFBFBF);*/
 
   width: 100%;
+}
+.skillsection{
+  background-image: url('../img/congruent_pentagon.png');
 }
 
 

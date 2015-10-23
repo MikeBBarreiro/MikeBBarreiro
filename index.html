@@ -26,6 +26,10 @@
     <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
     <link href="assets/css/style.css" rel="stylesheet"/>
     <link href="assets/css/animate.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/hover-css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/hover-css/vicons-font.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/hover-css/base.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/hover-css/buttons.css" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,16 +42,34 @@
   </head>
 
   <body>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '690075627796769',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 	<!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">LINK</a></h1>
+			<h1 class="logo"><a href="index.html#home">MEB DSGN</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
-			<a href="index.html">Home</a>
-			<a href="services.html">Services</a>
-			<a href="portfolio.html">Portfolio</a>
-			<a href="about.html">About</a>
+			<a href="#headerwrap" class="smoothScroll">Home</a>
+      <a href="#about" class="smoothScroll">About</a>
+      <a href="#portfolio" class="smoothScroll">Portfolio</a>
+			<a href="#services" class="smoothScroll">Services</a>
+      <a href="#skills" class="smoothScroll">Skills</a>
 			<a href="#contact" class="smoothScroll">Contact</a>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
@@ -56,7 +78,7 @@
 		</div>
 
 		<!-- Menu button -->
-		<div id="menuToggle"><i class="fa fa-bars"></i></div>
+		<div id="menuToggle" class="hvr-ripple-out"><div class="Leo-Menu"></div></div>
 	</nav>
 
 
@@ -87,7 +109,7 @@
 		 </div> -->
 	</div>
 
-  <div class="container aboutme">
+  <div class="container aboutme" id="about">
     <img src="assets/img/Leo-white.png" width="15px" height="20px" style="margin-left: auto; margin-right: auto; display: block; margin-top: 15px;" />
     <div class="row">
       <div class="col-sm-6 wp1" style="padding-bottom: 5px;">
@@ -125,7 +147,14 @@
 	        <p style="color: white;">Welcome to the Portfolio section! This is a list of apps and websites I created during and after school. Except for the batman, he's just there to look cool. :) enjoy!</p>
       	</div>
       	<div class="col-sm-4">
-      		<p class="pull-right"><br><button type="button" class="btn" style="background-color: #4869E4;">Go to Contact-information</button></p>
+          <a href="#contact" class="smoothScroll">
+            <button style="margin-top: 80px;" class="smoothScroll pull-right btn default-button button--antiman button--inverted button--border-thin button--text-thick button--size-s">
+
+                <span>Go To Contacts-Information</span>
+
+            </button>
+          </a>
+      		<!-- <p class="pull-right"><br><button type="button" class="btn" style="background-color: #4869E4;">Go to Contact-information</button></p> -->
       	</div>
       </div><!-- /row -->
     </div><!-- /.container -->
@@ -161,27 +190,27 @@
 	<div id="services">
 		<div class="container">
 			<div class="row mt">
-				<div class="col-sm-1 centered">
+				<div class="col-sm-1 centered wp2">
 					<i class="fa fa-certificate"></i>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3 wp3" style="-webkit-animation-delay: 0.5s; animation-delay: 0.05s;">
 					<h3>Quality Design</h3>
 					<p>Design is just as much as a big deal as the backend complexity making an app run the way it should. It is the creation of a plan or convention for the construction of an object or a system. </p>
 				</div>
 
-				<div class="col-sm-1 centered">
+				<div class="col-sm-1 centered wp2">
           <i class="fa fa-smile-o"></i>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3 wp3" style="-webkit-animation-delay: 0.15s; animation-delay: 0.15s;">
 					<h3>Passion</h3>
 					<p>Iv'e always told myself, I dont work for a paycheck. I work for the knowledge, they pay just comes with it. I thurst to be something better, to learn more and more.</p>
 				</div>
 
 
-				<div class="col-sm-1 centered">
+				<div class="col-sm-1 centered wp2">
 					<i class="fa fa-terminal"></i>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3 wp3" style="-webkit-animation-delay: 0.25s; animation-delay: 0.25s;">
 					<h3>Not just Design?</h3>
 					<p>I was not taught to only be a UX/UI dev. Full stack development is what I learned, Front-end and Back-end. My heart always lies at Front-end, but I cant stop there.</p>
 				</div>
@@ -229,116 +258,120 @@
 
 
 	<!-- CLIENTS LOGOS -->
-	<div id="lg">
-    <p style="font-size: 8px; float: left; position: absolute; margin-top: -45px; margin-left: 10px;">
-      Soon might be replaced with images
-    </p>
-    <h2 style="text-align: center;">Skills</h2>
-		<div class="container">
-			<div class="row centered">
-				<div class="col-sm-1 col-sm-offset-1">
-          <h4>HTML5</h4>
-					<!-- <img class='html4' src="assets/img/skills/HTML5_CSS_JavaScript.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>CSS3</h4>
-					<!-- <img src="assets/img/skills/angularjs-logo.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>Javascript</h4>
-					<!-- <img src="assets/img/skills/node.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>AngularJS</h4>
-					<!-- <img src="assets/img/skills/SOCKETIOICON.gif" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>NodeJS</h4>
-					<!-- <img src="assets/img/skills/logo.png" alt=""> -->
-				</div>
-        <div class="col-sm-1">
-          <h4>Socket.io</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>MongoDB</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>Jquery</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>Tiled</h4>
-        </div>
-			</div><!-- row -->
-      <div class="row centered">
-				<div class="col-sm-1 col-sm-offset-1">
-          <h4>Python</h4>
-					<!-- <img class='html4' src="assets/img/skills/HTML5_CSS_JavaScript.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>Boostrap</h4>
-					<!-- <img src="assets/img/skills/angularjs-logo.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>Mongoose</h4>
-					<!-- <img src="assets/img/skills/node.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>HapiJS</h4>
-					<!-- <img src="assets/img/skills/SOCKETIOICON.gif" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>Eclipse</h4>
-					<!-- <img src="assets/img/skills/logo.png" alt=""> -->
-				</div>
-        <div class="col-sm-1">
-          <h4>Jade</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>Foundation</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>Redis</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>Express</h4>
-        </div>
-			</div><!-- row -->
-      <div class="row centered">
-				<div class="col-sm-1 col-sm-offset-1">
-          <h4>Xcode</h4>
-					<!-- <img class='html4' src="assets/img/skills/HTML5_CSS_JavaScript.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>Ionic</h4>
-					<!-- <img src="assets/img/skills/angularjs-logo.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>Cordova</h4>
-					<!-- <img src="assets/img/skills/node.png" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>Gulp</h4>
-					<!-- <img src="assets/img/skills/SOCKETIOICON.gif" alt=""> -->
-				</div>
-				<div class="col-sm-1">
-          <h4>PhaserJS</h4>
-					<!-- <img src="assets/img/skills/logo.png" alt=""> -->
-				</div>
-        <div class="col-sm-1">
-          <h4>Canvas</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>Grunt</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>EJS</h4>
-        </div>
-        <div class="col-sm-1">
-          <h4>MySql</h4>
-        </div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- dg -->
+  <div id="skills">
+  	<div id="lg" class="skillsection">
+      <p style="font-size: 8px; float: left; position: absolute; margin-top: -45px; margin-left: 10px;">
+        Soon might be replaced with images
+      </p>
+      <h2 style="text-align: center; font-family: 'Lato', sans-serif;">Skills</h2>
+  		<div class="container">
+  			<div class="row centered">
+          <div class="col-sm-1"></div>
+  				<div class="col-sm-1">
+            <h4>HTML5</h4>
+  					<!-- <img class='html4' src="assets/img/skills/HTML5_CSS_JavaScript.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>CSS3</h4>
+  					<!-- <img src="assets/img/skills/angularjs-logo.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>Javascript</h4>
+  					<!-- <img src="assets/img/skills/node.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>AngularJS</h4>
+  					<!-- <img src="assets/img/skills/SOCKETIOICON.gif" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>NodeJS</h4>
+  					<!-- <img src="assets/img/skills/logo.png" alt=""> -->
+  				</div>
+          <div class="col-sm-1">
+            <h4>Socket.io</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>MongoDB</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>Jquery</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>Tiled</h4>
+          </div>
+  			</div><!-- row -->
+        <div class="row centered">
+  				<div class="col-sm-1 col-sm-offset-1">
+            <h4>Python</h4>
+  					<!-- <img class='html4' src="assets/img/skills/HTML5_CSS_JavaScript.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>Boostrap</h4>
+  					<!-- <img src="assets/img/skills/angularjs-logo.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>Mongoose</h4>
+  					<!-- <img src="assets/img/skills/node.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>HapiJS</h4>
+  					<!-- <img src="assets/img/skills/SOCKETIOICON.gif" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>Eclipse</h4>
+  					<!-- <img src="assets/img/skills/logo.png" alt=""> -->
+  				</div>
+          <div class="col-sm-1">
+            <h4>Jade</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>Foundation</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>Redis</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>Express</h4>
+          </div>
+  			</div><!-- row -->
+        <div class="row centered">
+  				<div class="col-sm-1 col-sm-offset-1">
+            <h4>Xcode</h4>
+  					<!-- <img class='html4' src="assets/img/skills/HTML5_CSS_JavaScript.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>Ionic</h4>
+  					<!-- <img src="assets/img/skills/angularjs-logo.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>Cordova</h4>
+  					<!-- <img src="assets/img/skills/node.png" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>Gulp</h4>
+  					<!-- <img src="assets/img/skills/SOCKETIOICON.gif" alt=""> -->
+  				</div>
+  				<div class="col-sm-1">
+            <h4>PhaserJS</h4>
+  					<!-- <img src="assets/img/skills/logo.png" alt=""> -->
+  				</div>
+          <div class="col-sm-1">
+            <h4>Canvas</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>Grunt</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>EJS</h4>
+          </div>
+          <div class="col-sm-1">
+            <h4>MySql</h4>
+          </div>
+          <div class="col-sm-1"></div>
+  			</div><!-- row -->
+  		</div><!-- container -->
+  	</div><!-- dg -->
+  </div>
 
 
 	<!-- CALL TO ACTION -->
@@ -401,8 +434,15 @@
 						E-mail: <a href="mailto:mikeb_barreiro@yahoo.com">mikeb_barreiro@yahoo.com</a>
 					</p>
 					<p>Phone call or email, go right ahead and reach out if you would like to contact me.
-          If you call and I miss you phone call go right ahead and leave a voice mail. I will call back asap.
+          If you call and I miss it, go right ahead and leave a voice mail, I will call back asap.
         Emails, I check them everyday so send one of those too! Thank you for checking out the site!</p>
+        <a href="#headerwrap" class="smoothScroll">
+          <button style="margin-top: 80px;" class="smoothScroll pull-right btn default-button button--antiman button--inverted button--border-thin button--text-thick button--size-s">
+
+              <span>back to top</span>
+
+          </button>
+        </a>
 				</div><!--col-sm-4-->
 			</div><!-- row -->
 		</div><!-- container -->
@@ -415,6 +455,7 @@
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,weather"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="assets/js/smoothscroll.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/main.js"></script>
 	<script src="assets/js/masonry.pkgd.min.js"></script>
@@ -434,8 +475,6 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/jquery.stellar.min.js"></script>
   <script src="assets/js/fancybox/jquery.fancybox.js"></script>
-  <script src="assets/js/smoothscroll.js"></script>
-  <script src='assets/js/jquery-play-sound.js'></script>
   <!-- // <script src="assets/js/jquery.stellar.min.js"></script> -->
   <!-- // <script src="assets/js/fancybox/jquery.fancybox.js"></script> -->
   <script src="assets/js/main2.js"></script>
@@ -447,6 +486,14 @@
 			maxDuration : 0.7,
 			viewportFactor : 0.2
 		} );
+
+		(function() {
+			var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+			if(isSafari) {
+				document.getElementById('support-note').style.display = 'block';
+			}
+		})();
+
 	</script>
   </body>
 </html>
