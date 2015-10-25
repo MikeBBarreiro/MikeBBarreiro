@@ -9,21 +9,47 @@
     $('#toggle_showshooshi').click(function(){
       $(".Sushi").attr('src',"assets/img/ww1.png");
     });
+		// var starship = $(".star-Destroyer").delay(2100).animate({right:'60%', top:'120%', height: '100px', width:'200px'}, 5000, function(){
+    // });
+
   });
 
 $('#vid').on('ended', function(){this.playedThrough = true;});
 
 $(window).scroll(function(){
-    var myVideo = document.getElementById("vid");
+  var windowScroll = $(window).scrollTop();
+  var myVideo = document.getElementById("vid");
+  var mq800 = window.matchMedia( "(min-width: 800px)" );
+  var mq320 = window.matchMedia( "(min-width: 320px)" );
 
-    if($(window).scrollTop() > 300 && $(window).scrollTop() < 975){
-       // only if we didn't reached the end yet
-       if(!myVideo.playedThrough)
-          myVideo.play();
-    }else{
-       myVideo.pause();
-    }
- })
+  console.log(windowScroll);
+   
+  if($(window).scrollTop() > 300 && $(window).scrollTop() < 975){
+     // only if we didn't reached the end yet
+     if(!myVideo.playedThrough)
+        myVideo.play();
+  }else{
+     myVideo.pause();
+  }
+  if (mq800.matches && windowScroll > 1120 && windowScroll < 1800) {
+     // window width is at least 320px
+     if(windowScroll > 1120 && windowScroll < 1800){
+        if(!myVideo.playedThrough)
+           myVideo.play();
+     }else{
+        myVideo.pause();
+     }
+  }
+  if (mq320.matches && windowScroll > 1147 && windowScroll < 1680) {
+     // window width is at least 320px
+     if(windowScroll > 1147 && windowScroll < 1680){
+        if(!myVideo.playedThrough)
+           myVideo.play();
+     }else{
+        myVideo.pause();
+     }
+  }
+})
 
   var map,
       infowindow = new google.maps.InfoWindow(),
