@@ -27,15 +27,7 @@
 	color: #ee2563;
 	display: none;
 }
-a {
-	color: #7986cb;
-	text-decoration: none;
-	outline: none;
-}
-a:hover,
-a:focus {
-	color: #3f51b5;
-}
+
 .hidden {
 	position: absolute;
 	width: 0;

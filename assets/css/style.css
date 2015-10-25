@@ -48,14 +48,14 @@
 @media screen and (max-width: 1025px){
   #vid{
     width: 500px;
-    margin-top: 300px;
+    margin-top: 10px;
   }
 }
 
 @media screen and (max-width: 1000px){
   #vid{
     width: 450px;
-    margin-top: 270px;
+    margin-top: 10px;
   }
 }
 

@@ -19,11 +19,11 @@ $('#vid').on('ended', function(){this.playedThrough = true;});
 $(window).scroll(function(){
   var windowScroll = $(window).scrollTop();
   var myVideo = document.getElementById("vid");
-  var mq800 = window.matchMedia( "(min-width: 800px)" );
-  var mq320 = window.matchMedia( "(min-width: 320px)" );
+  var mq800 = window.matchMedia( "(max-width: 800px)" );
+  var mq320 = window.matchMedia( "(max-width: 320px)" );
 
   console.log(windowScroll);
-   
+
   if($(window).scrollTop() > 300 && $(window).scrollTop() < 975){
      // only if we didn't reached the end yet
      if(!myVideo.playedThrough)
