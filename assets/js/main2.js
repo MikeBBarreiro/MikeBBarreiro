@@ -31,22 +31,22 @@ $(window).scroll(function(){
   }else{
      myVideo.pause();
   }
-  if (mq800.matches && windowScroll > 1120 && windowScroll < 1800) {
-     // window width is at least 320px
-    if(!myVideo.playedThrough){
-      myVideo.play();
-    }
-  }else{
-     myVideo.pause();
-  }
-  if (mq320.matches && windowScroll > 1147 && windowScroll < 1680) {
-     // window width is at least 320px
-    if(!myVideo.playedThrough){
-        myVideo.play();
-    }
-  }else{
-    myVideo.pause();
-  }
+  // if (mq800.matches && windowScroll > 1120 && windowScroll < 1800) {
+  //    // window width is at least 320px
+  //   if(!myVideo.playedThrough){
+  //     myVideo.play();
+  //   }
+  // }else{
+  //    myVideo.pause();
+  // }
+  // if(mq320.matches && windowScroll > 1147 && windowScroll < 1680) {
+  //    // window width is at least 320px
+  //   if(!myVideo.playedThrough){
+  //       myVideo.play();
+  //   }
+  // }else{
+  //   myVideo.pause();
+  // }
 })
 
   var map,
